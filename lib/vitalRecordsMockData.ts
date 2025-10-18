@@ -1,0 +1,145 @@
+// lib/vitalRecordsMockData.ts
+import {
+  BirthCertificateApplication,
+  DeathCertificateApplication,
+  AdminStats,
+} from "@/types/vitalRecords";
+
+export const mockBirthApplications: BirthCertificateApplication[] = [
+  {
+    id: "1",
+    applicationNumber: "BC-2024-001",
+    applicationType: "birth",
+    status: "under_review",
+    childInfo: {
+      firstName: "Adewale",
+      middleName: "John",
+      lastName: "Ogunbiyi",
+      dateOfBirth: "2024-09-15",
+      placeOfBirth: "Ikenne General Hospital",
+      gender: "male",
+      timeOfBirth: "08:30",
+    },
+    motherInfo: {
+      firstName: "Funmilayo",
+      lastName: "Ogunbiyi",
+      maidenName: "Adeleke",
+      dateOfBirth: "1995-03-20",
+      nationality: "Nigerian",
+      occupation: "Teacher",
+      address: "15 Lagos Road, Ikenne",
+      phone: "08012345678",
+    },
+    fatherInfo: {
+      firstName: "Oluwaseun",
+      lastName: "Ogunbiyi",
+      dateOfBirth: "1992-07-10",
+      nationality: "Nigerian",
+      occupation: "Farmer",
+      address: "15 Lagos Road, Ikenne",
+      phone: "08098765432",
+    },
+    applicantInfo: {
+      name: "Funmilayo Ogunbiyi",
+      relationship: "mother",
+      email: "funmi@email.com",
+      phone: "08012345678",
+      address: "15 Lagos Road, Ikenne",
+    },
+    documents: {
+      hospitalBirthRecord: "doc_001.pdf",
+      parentsMarriageCertificate: "doc_002.pdf",
+      parentsIds: ["id_001.pdf", "id_002.pdf"],
+    },
+    deliveryMethod: "collection",
+    payment: {
+      amount: 2500,
+      status: "completed",
+      method: "bank_transfer",
+      transactionRef: "TXN12345",
+      paidAt: "2024-10-01",
+    },
+    submittedDate: "2024-10-01",
+    createdAt: "2024-10-01",
+    updatedAt: "2024-10-05",
+  },
+];
+
+export const mockDeathApplications: DeathCertificateApplication[] = [
+  {
+    id: "1",
+    applicationNumber: "DC-2024-001",
+    applicationType: "death",
+    status: "approved",
+    deceasedInfo: {
+      firstName: "Abimbola",
+      lastName: "Adeyemi",
+      dateOfBirth: "1945-06-12",
+      dateOfDeath: "2024-09-20",
+      placeOfDeath: "Ikenne General Hospital",
+      age: 79,
+      gender: "female",
+      maritalStatus: "widowed",
+      occupation: "Retired Teacher",
+      lastResidentialAddress: "23 Church Street, Ikenne",
+      nationality: "Nigerian",
+    },
+    deathInfo: {
+      causeOfDeath: "Natural causes - Age-related complications",
+      mannerOfDeath: "natural",
+      placeType: "hospital",
+      attendingPhysician: "Dr. Adebayo Johnson",
+      medicalFacility: "Ikenne General Hospital",
+    },
+    informantInfo: {
+      name: "Taiwo Adeyemi",
+      relationship: "Son",
+      email: "taiwo@email.com",
+      phone: "08087654321",
+      address: "23 Church Street, Ikenne",
+    },
+    applicantInfo: {
+      name: "Taiwo Adeyemi",
+      relationship: "Son",
+      email: "taiwo@email.com",
+      phone: "08087654321",
+      address: "23 Church Street, Ikenne",
+    },
+    documents: {
+      medicalCertificate: "doc_003.pdf",
+      hospitalReport: "doc_004.pdf",
+      deceasedId: "id_003.pdf",
+      informantId: "id_004.pdf",
+    },
+    certificateInfo: {
+      certificateNumber: "DC/IKN/2024/001",
+      issueDate: "2024-09-25",
+      issuedBy: "Registrar, Ikenne LGA",
+    },
+    deliveryMethod: "collection",
+    payment: {
+      amount: 3000,
+      status: "completed",
+      method: "cash",
+      paidAt: "2024-09-21",
+    },
+    submittedDate: "2024-09-21",
+    approvedDate: "2024-09-25",
+    createdAt: "2024-09-21",
+    updatedAt: "2024-09-25",
+  },
+];
+
+export const mockAdminStats: AdminStats = {
+  totalApplications: {
+    birth: 245,
+    death: 87,
+    total: 332,
+  },
+  pending: 23,
+  approved: 289,
+  rejected: 20,
+  revenueThisMonth: 850000,
+  revenueTotal: 4250000,
+  averageProcessingTime: 7,
+};
